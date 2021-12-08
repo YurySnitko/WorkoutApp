@@ -1,14 +1,14 @@
 import { Box } from "@mui/system"
-import { SkipButton } from "./SkipButton"
-import { Timer } from "./Timer"
-import { useStore } from "../.."
+import { SkipButton } from "components/Controls/SkipBtn"
+import { Timer } from "components/Controls/Timer"
+import { useStore } from "index"
 import { observer } from "mobx-react-lite"
 import { useEffect } from "react"
 import { useNavigate } from "react-router"
-import { PauseBtn } from "./PauseBtn"
+import { PauseBtn } from "components/Controls/PauseBtn"
 import { Video } from "./Video"
 import { Typography } from "@mui/material"
-import useStyles from "../../style"
+import useStyles from "style"
 
 export const Training = observer(() => {
     const navigate = useNavigate()

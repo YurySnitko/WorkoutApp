@@ -2,10 +2,10 @@ import { Button, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import { useEffect, useRef } from "react"
 import { useNavigate } from "react-router"
-import { ActivityStatusType } from "../../store/TrainingStore"
-import useStyles from "../../style"
+import useStyles from "style"
+import { VideoPropsType } from "./training.types"
 
-export const Video: React.FC<PropsType> = ({ activityStatus, videoSrc, finishActivity }) => {
+export const Video: React.FC<VideoPropsType> = ({ activityStatus, videoSrc, finishActivity }) => {
     const navigate = useNavigate()
     const videoRef = useRef<HTMLVideoElement>(null)
     const classes = useStyles()
@@ -34,10 +34,4 @@ export const Video: React.FC<PropsType> = ({ activityStatus, videoSrc, finishAct
             </Box>
         </>}
     </Box>
-}
-
-type PropsType = {
-    activityStatus: ActivityStatusType
-    videoSrc: string
-    finishActivity: () => void
 }

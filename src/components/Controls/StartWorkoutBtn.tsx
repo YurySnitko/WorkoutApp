@@ -1,7 +1,7 @@
 import { Button } from "@mui/material"
 import { useNavigate } from "react-router"
-import { useStore } from "../.."
-import useStyles from "../../style"
+import { useStore } from "index"
+import useStyles from "style"
 
 export const StartWorkoutBtn = () => {
     const navigate = useNavigate()

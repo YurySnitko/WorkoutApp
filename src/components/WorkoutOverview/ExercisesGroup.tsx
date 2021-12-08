@@ -1,5 +1,5 @@
 import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemText } from "@mui/material"
-import { WorkoutsType } from "../../store/OverviewStore"
+import { WorkoutsType } from "store/OverviewStore"
 import { ExerciseTitleWithStatus } from "./ExerciseTitleWithStatus"
 
 export const ExercisesGroup: React.FC<WorkoutsType> = ({ exercises, title }) => {

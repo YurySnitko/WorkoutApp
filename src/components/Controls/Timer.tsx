@@ -2,7 +2,7 @@ import CircularProgress, { CircularProgressProps } from '@mui/material/CircularP
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { useEffect, useState } from 'react';
-import { ActivityStatusType } from '../../store/TrainingStore';
+import { CirclularPropsType, TimerPropsType } from './controls.types';
 
 export const Timer:
   React.FC<TimerPropsType> = ({ activityStatus, time, color, currentExercise, onTimerFinished }) => {
@@ -57,18 +57,4 @@ const CircularProgressWithLabel: React.FC<CirclularPropsType & CircularProgressP
       </Box>
     </Box>
   );
-}
-
-type TimerPropsType = {
-  time: number
-  color: string
-  currentExercise?: number
-  activityStatus?: ActivityStatusType
-  onTimerFinished: () => void
-}
-
-type CirclularPropsType = {
-  time: number
-  value: number
-  timerColor: string
 }

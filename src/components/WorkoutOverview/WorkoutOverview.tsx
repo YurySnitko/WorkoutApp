@@ -1,8 +1,8 @@
 import { Box } from "@mui/system"
 import { observer } from "mobx-react-lite"
-import { useStore } from "../.."
+import { useStore } from "index"
 import { ExercisesGroup } from "./ExercisesGroup"
-import { StartWorkoutBtn } from "./StartWorkoutBtn"
+import { StartWorkoutBtn } from "components/Controls/StartWorkoutBtn"
 
 export const WorkoutOverview = observer(() => {
     const {overViewStore} = useStore()

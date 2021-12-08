@@ -2,8 +2,8 @@ import { Check } from "@mui/icons-material"
 import { Button, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import { useNavigate } from "react-router"
-import { useStore } from "../.."
-import useStyles from "../../style"
+import { useStore } from "index"
+import useStyles from "style"
 
 export const TrainingCompleted = () => {
     const navigate = useNavigate()
