@@ -9,7 +9,7 @@ export const Ready = () => {
     const classes = useStyles()
 
     return <Box className={classes.flexContainer}>
-        <Typography variant="h4">Get Ready</Typography>
+        <Typography variant="h5">Get Ready</Typography>
         <Timer time={5} onTimerFinished={() => navigate('/training')} color="#13f5bd" />
     </Box>
 }

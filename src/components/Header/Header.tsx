@@ -1,17 +1,10 @@
 import { AppBar, Typography } from "@mui/material"
+import useStyles from "style"
 
 export const Header = () => {
-    return <AppBar
-        position="fixed"
-        sx={{
-            backgroundColor: "#ad0cf8",
-            width: "762px",
-            right: 0,
-            left: 0,
-            ml: "auto",
-            mr: "auto"
-        }}
-    >
+    const classes = useStyles()
+
+    return <AppBar position="fixed" className={classes.header}>
         <Typography align="center">
             Workout App
         </Typography>

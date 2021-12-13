@@ -9,14 +9,14 @@ import { TrainingCompleted } from './components/TrainingComlpeted/TrainingComple
 import { WorkoutOverview } from './components/WorkoutOverview/WorkoutOverview';
 
 function App() {
-  const {overViewStore} = useStore()
+  const { overViewStore } = useStore()
 
   useEffect(() => {
     overViewStore.getWorkoutsData()
   }, [overViewStore])
 
   return (
-    <Container sx={{padding: "20px 0"}}>
+    <Container sx={{ padding: "20px 10px" }}>
       <Header />
       <Routes>
         <Route path="/" element={<WorkoutOverview />} />
@@ -24,7 +24,7 @@ function App() {
         <Route path="/ready" element={<Ready />} />
         <Route path="/completed" element={<TrainingCompleted />} />
       </Routes>
-    </Container>  
+    </Container>
   );
 }
 

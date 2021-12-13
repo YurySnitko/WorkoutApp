@@ -29,7 +29,7 @@ export const Training = observer(() => {
 
     return currentExercise !== null && workoutExercises.length > 0
         ? (<Box className={classes.flexContainer} sx={{ gap: "20px" }}>
-            <Typography variant="h4">{workoutExercises[currentExercise].title}</Typography>
+            <Typography variant="h5">{workoutExercises[currentExercise].title}</Typography>
             <Box className={classes.timerBox}>
                 {
                     currentExercise > 0

@@ -68,6 +68,14 @@ const useStyles = makeStyles({
         alignItems: "center", 
         position: "relative", 
         alignSelf: "stretch" 
+    },
+    header: {
+        backgroundColor: "#ad0cf8",
+        maxWidth: "762px",
+        right: "0",
+        left: "0",
+        marginLeft: "auto",
+        marginRight: "auto"
     }
 })
 
