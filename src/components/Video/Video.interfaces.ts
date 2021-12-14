@@ -1,6 +1,6 @@
-import { ActivityStatusType } from "store/TrainingStore";
+import { ActivityStatusType } from "store/stores.interfaces";
 
-export type VideoPropsType = {
+export interface VideoProps {
     activityStatus: ActivityStatusType
     videoSrc: string
     finishActivity: () => void

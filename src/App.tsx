@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import { Routes, Route } from 'react-router';
 import { useStore } from 'index';
 import { Header } from './components/Header/Header';
-import { Ready } from './components/Training/Ready';
 import { Training } from './components/Training/Training';
 import { TrainingCompleted } from './components/TrainingComlpeted/TrainingCompleted';
 import { WorkoutOverview } from './components/WorkoutOverview/WorkoutOverview';
+import { GetReady } from 'components/GetReady/GetReady';
 
 function App() {
   const { overViewStore } = useStore()
@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<WorkoutOverview />} />
         <Route path="/training" element={<Training />} />
-        <Route path="/ready" element={<Ready />} />
+        <Route path="/ready" element={<GetReady />} />
         <Route path="/completed" element={<TrainingCompleted />} />
       </Routes>
     </Container>

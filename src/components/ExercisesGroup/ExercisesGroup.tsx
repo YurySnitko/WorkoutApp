@@ -1,8 +1,8 @@
 import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemText } from "@mui/material"
-import { WorkoutsType } from "store/OverviewStore"
-import { ExerciseTitleWithStatus } from "./ExerciseTitleWithStatus"
+import { ExercisesGroupProps } from "./ExercisesGroup.interfaces"
+import { ExerciseTitleWithStatus } from "./ExerciseTitle/ExerciseTitle"
 
-export const ExercisesGroup: React.FC<WorkoutsType> = ({ exercises, title }) => {
+export const ExercisesGroup: React.FC<ExercisesGroupProps> = ({ exercises, title }) => {
     return <div>
         <Divider variant="fullWidth" />
         <h5>{title}</h5>

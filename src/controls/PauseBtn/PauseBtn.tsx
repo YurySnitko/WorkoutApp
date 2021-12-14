@@ -1,9 +1,9 @@
 import { Button } from "@mui/material"
 import { Pause, PlayArrow } from "@mui/icons-material"
 import useStyles from "style"
-import { PauseBtnPropsType } from "./controls.types"
+import { PauseBtnProps } from "./PauseBtn.interfaces"
 
-export const PauseBtn: React.FC<PauseBtnPropsType> = ({ setActivityStatus, activityStatus }) => {
+export const PauseBtn: React.FC<PauseBtnProps> = ({ setActivityStatus, activityStatus }) => {
     const classes = useStyles()
     
     const onclick = () => {

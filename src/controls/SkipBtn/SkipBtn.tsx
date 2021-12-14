@@ -1,9 +1,9 @@
 import { SkipNext, SkipPrevious } from "@mui/icons-material"
 import { Button } from "@mui/material"
 import { Box } from "@mui/system"
-import { SkipBtnPropsType } from "./controls.types"
+import { SkipBtnProps } from "./SkipBtn.interfaces"
 
-export const SkipButton: React.FC<SkipBtnPropsType> = ({ direction, changeExercise }) => {
+export const SkipButton: React.FC<SkipBtnProps> = ({ direction, changeExercise }) => {
     return <Box
         position="absolute"
         sx={

@@ -1,10 +1,10 @@
 import { Box } from "@mui/system"
-import { Timer } from "components/Controls/Timer"
+import { Timer } from "controls/Timer/Timer"
 import { useNavigate } from "react-router";
 import { Typography } from "@mui/material";
 import useStyles from "style"
 
-export const Ready = () => {
+export const GetReady = () => {
     const navigate = useNavigate()
     const classes = useStyles()
 

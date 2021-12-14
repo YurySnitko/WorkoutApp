@@ -2,10 +2,10 @@ import CircularProgress, { CircularProgressProps } from '@mui/material/CircularP
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { useEffect, useState } from 'react';
-import { CirclularPropsType, TimerPropsType } from './controls.types';
+import { CirclularProps, TimerProps } from './Timer.interfaces';
 
 export const Timer:
-  React.FC<TimerPropsType> = ({ activityStatus, time, color, currentExercise, onTimerFinished }) => {
+  React.FC<TimerProps> = ({ activityStatus, time, color, currentExercise, onTimerFinished }) => {
     const [progress, setProgress] = useState(100);
 
     useEffect(() => {
@@ -32,7 +32,7 @@ export const Timer:
     return <CircularProgressWithLabel value={progress} time={time} timerColor={color} />;
   }
 
-const CircularProgressWithLabel: React.FC<CirclularPropsType & CircularProgressProps> = (
+const CircularProgressWithLabel: React.FC<CirclularProps & CircularProgressProps> = (
   { value, time, timerColor, ...props }) => {
   return (
     <Box sx={{ position: 'relative', display: 'inline-flex', color: `${timerColor}` }}>

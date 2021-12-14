@@ -3,9 +3,9 @@ import { Box } from "@mui/system"
 import { useEffect, useRef } from "react"
 import { useNavigate } from "react-router"
 import useStyles from "style"
-import { VideoPropsType } from "./training.types"
+import { VideoProps } from "./Video.interfaces"
 
-export const Video: React.FC<VideoPropsType> = ({ activityStatus, videoSrc, finishActivity }) => {
+export const Video: React.FC<VideoProps> = ({ activityStatus, videoSrc, finishActivity }) => {
     const navigate = useNavigate()
     const videoRef = useRef<HTMLVideoElement>(null)
     const classes = useStyles()

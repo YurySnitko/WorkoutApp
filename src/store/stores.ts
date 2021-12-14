@@ -7,5 +7,3 @@ const stores = {
 }
 
 export default stores
-
-export type StoreType = typeof stores;

@@ -1,7 +1,8 @@
 import { makeAutoObservable, runInAction } from "mobx"
+import { Exercise, Workouts } from "./stores.interfaces"
 
 export default class OverviewStore {
-    workouts = [] as WorkoutsType[]
+    workouts = [] as Workouts[]
 
     constructor() {
         makeAutoObservable(this)
@@ -37,29 +38,8 @@ export default class OverviewStore {
     }
 
     get workoutExercises() {
-        const arr = [] as ExerciseType[]
+        const arr = [] as Exercise[]
         this.workouts.length > 0 && this.workouts.forEach(e => arr.push(...e.exercises))
         return arr
     }
-}
-
-export type WorkoutsType = {
-    exercises: ExerciseType[]
-    muscle_group: MuscleGroupType
-    title: string
-}
-
-export type ExerciseType = {
-    id: number
-    title: string
-    description: string
-    duration: number
-    photo: string
-    video: string
-    isDone?: boolean
-}
-
-export type MuscleGroupType = {
-    name: string
-    photo: string
 }

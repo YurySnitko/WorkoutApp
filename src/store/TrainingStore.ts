@@ -1,5 +1,6 @@
 import { makeAutoObservable } from "mobx"
 import stores from "./stores"
+import { ActivityStatusType } from "./stores.interfaces"
 
 export default class TrainingStore {
     currentExercise = 0
@@ -34,5 +35,3 @@ export default class TrainingStore {
         this.currentExercise = 0
     }
 }
-
-export type ActivityStatusType = "notStarted" | "started" | "completed" | "paused"
