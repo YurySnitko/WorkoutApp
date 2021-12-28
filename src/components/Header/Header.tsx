@@ -1,12 +1,11 @@
-import { AppBar, Typography } from "@mui/material"
-import useStyles from "style"
+import React from 'react';
+import { Typography } from '@mui/material';
+import { HeaderBox } from './Header.styles';
 
-export const Header = () => {
-    const classes = useStyles()
-
-    return <AppBar position="fixed" className={classes.header}>
-        <Typography align="center">
-            Workout App
-        </Typography>
-    </AppBar>
-}
+export const Header: React.FC = () => {
+  return (
+    <HeaderBox>
+      <Typography align="center">Workout App</Typography>
+    </HeaderBox>
+  );
+};

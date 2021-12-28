@@ -1,15 +1,20 @@
-import { Box } from "@mui/system"
-import { Timer } from "controls/Timer/Timer"
-import { useNavigate } from "react-router";
-import { Typography } from "@mui/material";
-import useStyles from "style"
+import React from 'react';
+import { Timer } from 'controls/Timer/Timer';
+import { useNavigate } from 'react-router';
+import { Typography } from '@mui/material';
+import { GetReadyBox } from './GetReady.styles';
 
-export const GetReady = () => {
-    const navigate = useNavigate()
-    const classes = useStyles()
+export const GetReady: React.FC = () => {
+  const navigate = useNavigate();
 
-    return <Box className={classes.flexContainer}>
-        <Typography variant="h5">Get Ready</Typography>
-        <Timer time={5} onTimerFinished={() => navigate('/training')} color="#13f5bd" />
-    </Box>
-}
+  return (
+    <GetReadyBox>
+      <Typography variant="h5">Get Ready</Typography>
+      <Timer
+        time={5}
+        onTimerFinished={() => navigate('/training')}
+        type="ready"
+      />
+    </GetReadyBox>
+  );
+};

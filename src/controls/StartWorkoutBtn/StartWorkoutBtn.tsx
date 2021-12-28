@@ -1,28 +1,26 @@
-import { Button } from "@mui/material"
-import { useNavigate } from "react-router"
-import { useStore } from "index"
-import useStyles from "style"
+import { useNavigate } from 'react-router-dom';
+import { useStore } from 'index';
+import { observer } from 'mobx-react-lite';
+import { StartBtnStld } from './StartWorkoutBtn.styles';
 
-export const StartWorkoutBtn = () => {
-    const navigate = useNavigate()
-    const {trainingStore} = useStore()
-    const classes = useStyles()
+export const StartWorkoutBtn = observer(() => {
+  const navigate = useNavigate();
+  const { trainingStore } = useStore();
 
-    const onWorkoutStart = () => {
-        if (trainingStore.activityStatus === "paused") {
-            navigate("/training")
-        } else {
-            trainingStore.setActivityStatus("started")
-            navigate("/ready")
-        }
+  const onWorkoutStart = () => {
+    if (trainingStore.activityStatus === 'paused') {
+      navigate('/training');
+    } else {
+      trainingStore.setActivityStatus('started');
+      navigate('/ready');
     }
+  };
 
-    return <Button
-        className={classes.startBtn}
-        variant="contained"
-        fullWidth={true}
-        onClick={onWorkoutStart}
-    >
-        {trainingStore.activityStatus === "paused" ? "Continue Workout" : "Start Workout"}
-    </Button>
-}
+  return (
+    <StartBtnStld variant="contained" fullWidth={true} onClick={onWorkoutStart}>
+      {trainingStore.activityStatus === 'paused'
+        ? 'Continue Workout'
+        : 'Start Workout'}
+    </StartBtnStld>
+  );
+});

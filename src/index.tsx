@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import stores from './store/stores';
+import stores from './store/Stores/stores';
+import { Theme } from 'Theme';
+import { App } from 'App';
+import { StoreType } from 'store/Stores/stores.interfaces';
 
-const StoreContext = React.createContext(stores);
+const StoreContext = React.createContext<StoreType>(stores);
 
-export const useStore = () => React.useContext(StoreContext);
+export const useStore = (): StoreType => React.useContext(StoreContext);
 
 ReactDOM.render(
   <React.StrictMode>
     <StoreContext.Provider value={stores}>
       <BrowserRouter>
-        <App />
+        <Theme>
+          <App />
+        </Theme>
       </BrowserRouter>
     </StoreContext.Provider>
   </React.StrictMode>,

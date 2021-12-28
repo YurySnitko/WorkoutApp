@@ -1,37 +1,42 @@
-import { Button, Typography } from "@mui/material"
-import { Box } from "@mui/system"
-import { useEffect, useRef } from "react"
-import { useNavigate } from "react-router"
-import useStyles from "style"
-import { VideoProps } from "./Video.interfaces"
+import { Typography } from '@mui/material';
+import { LeaveWorkoutBtn } from 'controls/LeaveWorkoutBtn/LeaveWorkoutBtn';
+import { OverviewBtn } from 'controls/OverviewBtn/OverviewBtn';
+import React, { useEffect, useRef } from 'react';
+import { VideoProps } from './Video.interfaces';
+import { Filter, PauseBox, VideoBox } from './Video.styles';
 
-export const Video: React.FC<VideoProps> = ({ activityStatus, videoSrc, finishActivity }) => {
-    const navigate = useNavigate()
-    const videoRef = useRef<HTMLVideoElement>(null)
-    const classes = useStyles()
+export const Video: React.FC<VideoProps> = ({
+  activityStatus,
+  videoSrc,
+  finishActivity,
+}) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-    const leaveWorkout = () => {
-        finishActivity()
-        navigate("/")
+  useEffect(() => {
+    if (videoRef.current) {
+      activityStatus === 'paused' && videoRef.current.pause();
+      activityStatus === 'started' && videoRef.current.play();
     }
+  }, [activityStatus, videoSrc]);
 
-    useEffect(() => {
-        if (videoRef.current) {
-            activityStatus === "paused" && videoRef.current.pause()
-            activityStatus === "started" && videoRef.current.play()
-        } 
-    }, [activityStatus, videoSrc])
-
-    return <Box sx={{ position: "relative" }}>
-        <video src={videoSrc} ref={videoRef} autoPlay loop muted width="100%" />
-        {activityStatus === "paused" && <>
-            <Box className={classes.videoFilter} />
-            <Box className={classes.pauseBox}>
-                <Typography variant="h5" color="inherit">Workout paused</Typography>
-                <Typography variant="body2" color="inherit">Press "Play" button to continue</Typography>
-                <Button onClick={() => navigate("/")} variant="outlined" color="inherit">Workout overview</Button>
-                <Button onClick={leaveWorkout} variant="outlined" color="inherit">Leave workout</Button>
-            </Box>
-        </>}
-    </Box>
-}
+  return (
+    <VideoBox>
+      <video src={videoSrc} ref={videoRef} autoPlay loop muted />
+      {activityStatus === 'paused' && (
+        <>
+          <Filter />
+          <PauseBox>
+            <Typography variant="h5" color="inherit">
+              Workout paused
+            </Typography>
+            <Typography variant="body2" color="inherit">
+              Press &#34;Play&#34; button to continue
+            </Typography>
+            <OverviewBtn />
+            <LeaveWorkoutBtn finishActivity={finishActivity} />
+          </PauseBox>
+        </>
+      )}
+    </VideoBox>
+  );
+};

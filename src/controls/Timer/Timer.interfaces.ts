@@ -1,15 +1,21 @@
-import { ActivityStatusType } from "store/stores.interfaces"
+import { ActivityStatusType } from 'store/TrainingStore/TrainingStore.interfaces';
 
 export interface TimerProps {
-    time: number
-    color: string
-    currentExercise?: number
-    activityStatus?: ActivityStatusType
-    onTimerFinished: () => void
+  time: number;
+  type: TimerType;
+  currentExercise?: number;
+  activityStatus?: ActivityStatusType;
+  onTimerFinished: () => void;
+}
+
+export interface TimerBoxProps {
+  type: TimerType;
 }
 
 export interface CirclularProps {
-    time: number
-    value: number
-    timerColor: string
+  time: number;
+  value: number;
+  type: TimerType;
 }
+
+export type TimerType = 'ready' | 'main';

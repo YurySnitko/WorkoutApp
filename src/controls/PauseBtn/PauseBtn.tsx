@@ -1,18 +1,21 @@
-import { Button } from "@mui/material"
-import { Pause, PlayArrow } from "@mui/icons-material"
-import useStyles from "style"
-import { PauseBtnProps } from "./PauseBtn.interfaces"
+import { Pause, PlayArrow } from '@mui/icons-material';
+import React from 'react';
+import { PauseBtnProps } from './PauseBtn.interfaces';
+import { PauseBtnStld } from './PauseBtn.styles';
 
-export const PauseBtn: React.FC<PauseBtnProps> = ({ setActivityStatus, activityStatus }) => {
-    const classes = useStyles()
-    
-    const onclick = () => {
-        activityStatus === "paused" 
-        ? setActivityStatus("started")
-        : setActivityStatus("paused")
-    }
+export const PauseBtn: React.FC<PauseBtnProps> = ({
+  setActivityStatus,
+  activityStatus,
+}) => {
+  const onclick = () => {
+    activityStatus === 'paused'
+      ? setActivityStatus('started')
+      : setActivityStatus('paused');
+  };
 
-    return <Button onClick={onclick} variant='contained' className={classes.pauseBtn}>
-        {activityStatus === "paused" ? <PlayArrow /> : <Pause />}
-    </Button>
-}
+  return (
+    <PauseBtnStld onClick={onclick} variant="contained">
+      {activityStatus === 'paused' ? <PlayArrow /> : <Pause />}
+    </PauseBtnStld>
+  );
+};
