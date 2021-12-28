@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx';
-import stores from '../Stores/stores';
+import stores from '../stores';
 import { ActivityStatusType } from './TrainingStore.interfaces';
 
 export default class TrainingStore {

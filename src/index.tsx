@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
-import stores from './store/Stores/stores';
+import stores from './store/stores';
 import { Theme } from 'Theme';
 import { App } from 'App';
-import { StoreType } from 'store/Stores/stores.interfaces';
+import { StoreType } from 'store/stores.interfaces';
 
 const StoreContext = React.createContext<StoreType>(stores);
 

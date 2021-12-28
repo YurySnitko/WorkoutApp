@@ -1,5 +1,5 @@
-import OverviewStore from '../OverviewStore/OverviewStore';
-import TrainingStore from '../TrainingStore/TrainingStore';
+import OverviewStore from './OverviewStore/OverviewStore';
+import TrainingStore from './TrainingStore/TrainingStore';
 
 const stores = {
   overViewStore: new OverviewStore(),
